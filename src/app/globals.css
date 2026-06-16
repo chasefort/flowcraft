@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/*
+  Flowcraft — "Verdant Studio" design system
+  Green & white, editorial. White/paper dominates; emerald is structure;
+  spring green is the rare pop.
+*/
+
+:root {
+  --background: #f3f7f1;
+  --surface: #ffffff;
+  --surface-muted: #eaf1e7;
+  --foreground: #102a1e;
+  --muted: #586b60;
+  --border: #e1e9dc;
+  --border-strong: #ccdac4;
+
+  --primary: #15724c;
+  --primary-hover: #115e3e;
+  --primary-soft: #d9efe2;
+  --primary-foreground: #ffffff;
+
+  --accent: #2f9c63;
+  --accent-soft: #e0f2e7;
+  --highlight: #8fe0a3;
+
+  --pine: #0c2a1d;
+
+  --success: #1f9d6b;
+  --success-soft: #def2e8;
+  --warning: #9a6a14;
+  --warning-soft: #f4e9cf;
+  --danger: #bf462c;
+
+  --ring: rgba(21, 114, 76, 0.32);
+  --shadow-sm: 0 1px 2px rgba(16, 42, 30, 0.06);
+  --shadow-md: 0 10px 30px -12px rgba(16, 42, 30, 0.22);
+  --shadow-lg: 0 28px 70px -24px rgba(16, 42, 30, 0.32);
+  --radius: 16px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-highlight: var(--highlight);
+  --color-pine: var(--pine);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+  --radius-card: var(--radius);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.018em;
+}
+
+/* Editorial highlight swipe behind a phrase */
+.highlight-swipe {
+  background: linear-gradient(
+    to bottom,
+    transparent 6%,
+    var(--highlight) 6%,
+    var(--highlight) 92%,
+    transparent 92%
+  );
+  background-size: 100% 100%;
+  padding: 0 0.06em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fade-in-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 var(--ring); }
+  70% { box-shadow: 0 0 0 8px rgba(21, 114, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 114, 76, 0); }
+}
+.pulse-ring { animation: pulse-ring 1.6s ease-out infinite; }
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+.shimmer { position: relative; overflow: hidden; }
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-2%, 1.5%, 0); }
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--pine);
+}
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

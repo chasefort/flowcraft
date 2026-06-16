@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 380" width="1280" height="380" role="img" aria-label="Flowcraft animated logo">
+  <title>Flowcraft - AI content planning workflow</title>
+  <defs>
+    <radialGradient id="paperGlow" cx="50%" cy="45%" r="54%">
+      <stop offset="0%" stop-color="#8fe0a3" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#d9efe2" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#f3f7f1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="paperGrid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="#ccdac4" stroke-opacity="0.30" stroke-width="1"/>
+    </pattern>
+    <filter id="softShadow" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#102a1e" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .mono { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="380" fill="#f3f7f1"/>
+  <rect width="1280" height="380" fill="url(#paperGlow)">
+    <animate attributeName="opacity" values="0.72;1;0.72" dur="6.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1280" height="380" fill="url(#paperGrid)" opacity="0.56"/>
+
+  <g opacity="0.16" stroke="#15724c" stroke-width="1">
+    <path d="M0 108H1280M0 272H1280"/>
+    <path d="M256 0V380M1024 0V380"/>
+  </g>
+
+  <g transform="translate(640 136)" text-anchor="middle">
+    <g opacity="0.58">
+      <circle r="86" fill="none" stroke="#15724c" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="12 16">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="116" fill="none" stroke="#8fe0a3" stroke-opacity="0.32" stroke-width="2" stroke-dasharray="4 20">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="24s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g>
+      <circle r="5" fill="#15724c">
+        <animateMotion dur="7s" repeatCount="indefinite" path="M86,0 A86,86 0 1,1 -86,0 A86,86 0 1,1 86,0"/>
+      </circle>
+      <circle r="4" fill="#8fe0a3">
+        <animateMotion dur="9s" repeatCount="indefinite" path="M-116,0 A116,116 0 1,1 116,0 A116,116 0 1,1 -116,0"/>
+      </circle>
+    </g>
+
+    <g transform="translate(-54 -54)" filter="url(#softShadow)">
+      <rect width="108" height="108" rx="28" fill="#15724c"/>
+      <path d="M33 34h42M33 54h26M33 74h46" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="76" cy="54" r="8" fill="#8fe0a3">
+        <animate attributeName="r" values="7;11;7" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="18" y="18" width="72" height="72" rx="20" fill="none" stroke="#8fe0a3" stroke-opacity="0.34" stroke-width="2">
+        <animate attributeName="opacity" values="0.18;0.5;0.18" dur="3.1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <text x="0" y="112" class="sans" font-size="52" font-weight="820" fill="#102a1e">Flowcraft</text>
+    <text x="0" y="150" class="mono" font-size="14" letter-spacing="3.2" fill="#586b60">AI CONTENT PLANNING WORKFLOW</text>
+    <line x1="-210" x2="210" y1="174" y2="174" stroke="#15724c" stroke-width="3" stroke-linecap="round" stroke-dasharray="46 28">
+      <animate attributeName="stroke-dashoffset" from="0" to="-148" dur="5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>
