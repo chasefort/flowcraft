@@ -8,6 +8,10 @@
 
 The app is built as a staged, human-in-the-loop workflow: ingest context, extract themes, plan pillars, draft posts, and prepare the output for review. It does not auto-publish. Every post is something a person can approve, edit, flag, copy, or export.
 
+## Preview
+
+![Flowcraft planner screenshot](docs/screenshot.png)
+
 ## What It Does
 
 1. **Ingests context** from a company/product URL through Firecrawl or from pasted source material.
@@ -31,6 +35,16 @@ The core transferable idea is staged content generation: separate context ingest
 ## Why It Matters
 
 Most AI content tools jump straight from prompt to copy. Flowcraft treats content planning as an operating workflow: context first, structure second, generation third, review always. That makes the output easier to inspect, adapt, and hand off than a pile of disconnected drafts.
+
+## Example Output
+
+A generated plan includes:
+
+- **Campaign strategy:** audience, positioning, key message, and campaign goal.
+- **Theme extraction:** source-grounded ideas worth turning into a campaign.
+- **Content pillars:** reusable angles with rationale and suggested channel fit.
+- **Draft posts:** channel-specific copy with CTA, hashtags where useful, suggested slot, and rationale.
+- **Review states:** approve, edit, or flag each post before copying or exporting.
 
 ## Architecture
 
@@ -116,3 +130,7 @@ src/
 - There is no auth or multi-tenant workspace layer.
 - URL ingestion is single-page, not a full crawl.
 - Publishing integrations are intentionally left out; the app produces review-ready output, not automatic distribution.
+
+## License
+
+MIT
